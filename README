@@ -1,0 +1,14 @@
+HDFS to Netezza loader - provides an mechanism to export files from HDFS into csv format datasets that can be loaded into netezza using nzload.
+
+The EventLoader requires an implementation of the DataTransformation interface. DataTransformationBase provides some basic transformations that you can build on.
+
+Test: TestEventLoader - uses a file to generate a stream that will be converted to a csv format.
+eg: EventLoader program parameters :
+-s $actionCore -i $actionCorePort  -e $eventType -p $PATH_TO_THE_EVENT_IN_HDFS -d $GOODWILL_REGISTRAR -o $OUTPUT_FILE
+eg:
+VM parameters - -Ddefault=com.ning.metrics.event.loader.DataTransformationEvents -DFrontDoorVisit=com.ning.metrics.event.loader.DataTransformationFrontDoorVisit
+
+ -s action.xno.ningops.net -e FrontDoorVisit -i 8080 -d goodwill.ningops.com -p /events/ning/FrontDoorVisit/2011/09/10/00
+License (see LICENSE-2.0.txt file for full license)
+
+Copyright 2011 Ning
